@@ -1,19 +1,22 @@
 
 const apkUrl = "https://github.com/Alisia-EcoPoint/ecopoint/releases/download/v1.0.0/app-release.apk";
 
-const downloadBtn = document.getElementById("downloadBtn");
-const downloadStatus = document.getElementById("downloadStatus");
+document.addEventListener("DOMContentLoaded", () => {
+  const downloadBtn = document.getElementById("downloadBtn");
+  const downloadStatus = document.getElementById("downloadStatus");
+  const yearElement = document.getElementById("year");
 
-downloadBtn.addEventListener("click", (event) => {
-  if (!apkUrl) {
-    event.preventDefault();
-    downloadStatus.textContent =
-      "EcoPoint for Android is coming soon!";
-    return;
+  if (downloadBtn) {
+    downloadBtn.href = apkUrl;
+
+    downloadBtn.addEventListener("click", () => {
+      if (downloadStatus) {
+        downloadStatus.textContent = "Your download is starting...";
+      }
+    });
   }
 
-  downloadBtn.href = apkUrl;
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
 });
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
