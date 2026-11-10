@@ -1,5 +1,5 @@
 
-const apkUrl = "";
+const apkUrl = "https://github.com/Alisia-EcoPoint/ecopoint/releases/download/v1.0.0/app-release.apk";
 
 const downloadBtn = document.getElementById("downloadBtn");
 const downloadStatus = document.getElementById("downloadStatus");
